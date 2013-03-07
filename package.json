@@ -1,14 +1,17 @@
 {
   "name": "IrrationalServer",
   "version": "0.0.0",
-  "description": "ERROR: No README.md file found!",
+  "description": "Reloads css in-browser when linked stylesheets change",
   "main": "app.js",
   "dependencies": {
     "express": "~3.1.0",
     "socket.io": "~0.9.13",
     "ejs": "~0.8.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "commander": "~1.1.1",
+    "optparse": "~1.0.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

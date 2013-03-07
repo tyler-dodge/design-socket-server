@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+var designSocket = require('../app');
+
+if (process.argv[2] == "--help" || process.argv[2] == "-h") {
+  console.log("Usage: design-socket <dir = .> <port = 3000>");
+} else {
+  var options = {
+    dir: process.argv[2],
+    port: process.argv[3]
+  };
+  designSocket(options);
+}
