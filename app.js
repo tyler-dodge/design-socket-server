@@ -54,12 +54,11 @@ module.exports = function(options) {
   app.set('views', dir );
   app.use('/design_socket', express['static'](__dirname + "/lib"));
   
-  var file_cache = {};
   function handle_html(req, res) {
     if (req.url.charAt(req.url.length-1) === '/') {
       req.url += 'index.html';
     }
-    var html = file_cache[req.url] || (file_cache[req.url] = fs.readFileSync(dir + req.url));
+    var html = fs.readFileSync(dir + req.url);
     var matched = /<head[^>]*>/.exec(html);
     if (matched !== null) {
       html = html.slice(0,matched.index) +
